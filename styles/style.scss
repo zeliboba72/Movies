@@ -1,0 +1,615 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap");
+
+$font-fam-main: "Inter", sans-serif;
+
+$fw-s: 400;
+$fw-r: 500;
+$fw-b: 900;
+
+$clr-1: rgba(255, 255, 255, 1);
+$clr-2: rgba(0, 0, 0, 1);
+$clr-3: rgba(84, 84, 84, 1);
+$clr-3-opac: rgba(84, 84, 84, 0.7);
+
+$screen-sm: 600px;
+$screen-md: 768px;
+$screen-lg: 910px;
+
+$content-width: 900px;
+
+$transition-btns: 0.2s linear;
+$transition-modals: 0.3s ease-in-out;
+
+body {
+  font-family: $font-fam-main;
+  background-color: $clr-2;
+}
+
+.container-inner {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  border-bottom: 1px solid $clr-3-opac;
+
+  &__logo {
+    opacity: 1;
+    transition: opacity $transition-btns;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3px 2px $clr-1;
+    }
+
+    .logo-img {
+      display: block;
+    }
+  }
+
+  @media (max-width: $screen-lg) {
+    padding: 0 20px;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  min-height: 210px;
+  color: $clr-1;
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 150px;
+    height: 50px;
+    background-color: inherit;
+    border: 2px solid $clr-1;
+    cursor: pointer;
+    transition: opacity $transition-btns;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3px 2px $clr-1;
+    }
+
+    .icon-plus {
+      width: 22px;
+      height: 22px;
+      background: url(../assets/plus.svg) no-repeat center;
+    }
+
+    @media (max-width: $screen-md) {
+      margin: 0 0 30px 0;
+      width: 280px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    .profile__avatar-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 30px;
+
+      .avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: $screen-sm) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    .profile__information {
+      max-width: 450px;
+      position: relative;
+      @media (max-width: $screen-lg) {
+        max-width: 350px;
+      }
+
+      @media (max-width: $screen-md) {
+        max-width: 320px;
+      }
+
+      @media (max-width: $screen-sm) {
+        max-width: 280px;
+      }
+
+      .profile__name {
+        margin: 0;
+        font-weight: $fw-r;
+        font-size: 42px;
+        margin-bottom: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @media (max-width: $screen-lg) {
+          font-size: 36px;
+        }
+        @media (max-width: $screen-md) {
+          font-size: 30px;
+        }
+        @media (max-width: $screen-sm) {
+          font-size: 26px;
+        }
+      }
+      .profile__business {
+        margin: 0;
+        font-weight: $fw-s;
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .profile__edit {
+        width: 24px;
+        height: 24px;
+        background: url(../assets/edit.svg) no-repeat center;
+        border: 1px solid white;
+        position: absolute;
+        right: -50px;
+        top: 15px;
+        cursor: pointer;
+        transition: opacity $transition-btns;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 3px 2px $clr-1;
+        }
+        @media (max-width: $screen-sm) {
+          right: 0px;
+          top: -23px;
+        }
+      }
+    }
+    @media (max-width: $screen-md) {
+      margin: 30px 0;
+    }
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: $screen-lg) {
+    padding: 0 20px;
+  }
+  @media (max-width: $screen-md) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 32%;
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: $clr-1;
+    margin-bottom: 20px;
+
+    .main__image-wrap {
+      height: 75%;
+      overflow: hidden;
+
+      .main__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform $transition-btns;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .main__description-wrap {
+      height: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      .main__description {
+        font-size: 16px;
+        font-weight: $fw-b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .main__checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        cursor: pointer;
+
+        .main__checkbox__input.visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          padding: 0;
+          overflow: hidden;
+          border: 0;
+          clip: rect(0 0 0 0);
+
+          &:checked + .main__checkbox-like {
+            fill: rgb(252, 64, 64);
+          }
+
+          &:focus + .main__checkbox-like {
+            box-shadow: 0 0 3px 1px $clr-3-opac;
+          }
+        }
+
+        .main__checkbox-like {
+          width: 30px;
+          height: 25px;
+          fill: $clr-1;
+          stroke: $clr-2;
+          stroke-width: 20px;
+          cursor: pointer;
+          transition: opacity $transition-btns;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    @media (max-width: $screen-md) {
+      flex: 0 0 48%;
+    }
+    @media (max-width: $screen-sm) {
+      flex: 0 0 100%;
+    }
+  }
+
+  @media (max-width: $screen-lg) {
+    padding: 0 20px;
+  }
+}
+
+.footer {
+  height: 150px;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-weight: $fw-s;
+    color: $clr-3;
+    font-size: 16px;
+  }
+
+  @media (max-width: $screen-lg) {
+    padding: 0 20px;
+  }
+  @media (max-width: $screen-sm) {
+    justify-content: center;
+  }
+}
+
+.modal-edit {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-modals;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.open .modal-edit__window {
+    transform: translate(0, 0);
+  }
+  &.open.close {
+    opacity: 0;
+  }
+
+  &.open.close .modal-edit__window {
+    transform: translate(0, -200px);
+  }
+
+  &.open.submit {
+    opacity: 0;
+  }
+
+  &__overlay {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 20px;
+
+    .modal-edit__window {
+      transform: translate(0, -200px);
+      transition: transform $transition-modals;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 430px;
+      background-color: $clr-1;
+      border-radius: 10px;
+      padding: 36px;
+
+      .modal-edit__title {
+        font-size: 24px;
+        font-weight: $fw-b;
+        margin: 0 0 50px 0;
+
+        @media (max-width: $screen-sm) {
+          text-align: center;
+          line-height: 1.4;
+        }
+      }
+
+      & input {
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid $clr-3-opac;
+        outline: none;
+        font-weight: $fw-s;
+        font-size: 14px;
+        color: $clr-2;
+        position: relative;
+
+        &:focus {
+          border-bottom: 1px solid $clr-2;
+        }
+      }
+
+      .modal-edit__name {
+        margin-bottom: 15px;
+
+        &.empty-string::placeholder {
+          color: red;
+        }
+      }
+
+      .modal-edit__business {
+        margin-bottom: 50px;
+
+        &.empty-string::placeholder {
+          color: red;
+        }
+      }
+
+      .modal-edit__button {
+        height: 50px;
+        background-color: $clr-2;
+        color: $clr-1;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        transition: background-color $transition-btns;
+
+        &:hover {
+          background-color: $clr-3;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 4px 4px $clr-3;
+        }
+      }
+
+      .modal-edit__close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 45px;
+        height: 45px;
+        background: url(../assets/close.svg) no-repeat center;
+        cursor: pointer;
+        transition: opacity $transition-btns;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        @media (max-width: $screen-sm) {
+          top: -50px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.modal-add-film {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-modals;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.open .modal-add-film__window {
+    transform: translate(0, 0);
+  }
+
+  &.open.close {
+    opacity: 0;
+  }
+
+  &.open.close .modal-add-film__window {
+    transform: translate(0, -200px);
+  }
+
+  &.open.submit {
+    opacity: 0;
+  }
+
+  &__overlay {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 20px;
+
+    .modal-add-film__window {
+      transform: translate(0, -200px);
+      transition: transform $transition-modals;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 430px;
+      background-color: $clr-1;
+      border-radius: 10px;
+      padding: 36px;
+
+      .modal-add-film__title {
+        font-size: 24px;
+        font-weight: $fw-b;
+        margin: 0 0 30px 0;
+
+        @media (max-width: $screen-sm) {
+          text-align: center;
+          line-height: 1.4;
+        }
+      }
+
+      .modal-add-film__name {
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid $clr-3-opac;
+        outline: none;
+        font-weight: $fw-s;
+        font-size: 14px;
+        color: $clr-2;
+        position: relative;
+        margin-bottom: 15px;
+
+        &.empty-string::placeholder {
+          color: red;
+        }
+
+        &:focus {
+          border-bottom: 1px solid $clr-2;
+        }
+      }
+
+      .modal-add-film__file-loader-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        background-color: $clr-1;
+        border: 2px solid $clr-2;
+        margin-bottom: 10px;
+        color: $clr-2;
+        font-weight: $fw-b;
+        font-size: 18px;
+        cursor: pointer;
+        transition: opacity $transition-btns;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        .modal-add-film__file-loader {
+          display: none;
+        }
+      }
+
+      .modal-add-film__button-submit {
+        display: none;
+        width: 100%;
+        height: 50px;
+        background-color: $clr-2;
+        color: $clr-1;
+        font-weight: $fw-b;
+        font-size: 18px;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        transition: background-color $transition-btns;
+
+        &.active {
+          display: block;
+        }
+
+        &:hover {
+          background-color: $clr-3;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 4px 4px $clr-3;
+        }
+      }
+
+      .modal-add-film__close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 45px;
+        height: 45px;
+        background: url(../assets/close.svg) no-repeat center;
+        cursor: pointer;
+        transition: opacity $transition-btns;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        @media (max-width: $screen-sm) {
+          top: -50px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
