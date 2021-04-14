@@ -81,7 +81,7 @@ buttonAddFilm.addEventListener("click", () => {
     }, 300);
   }
 
-  function closingWindow() {
+  function closeWindow() {
     modalAddFilmSubmitButton.removeEventListener("click", submitNewFilm);
     modalAddFilm.classList.add("close");
     setTimeout(() => {
@@ -101,18 +101,11 @@ buttonAddFilm.addEventListener("click", () => {
 
   modalAddFilmSubmitButton.addEventListener("click", submitNewFilm);
 
-  modalAddFilmCloseButton.addEventListener("click", closingWindow);
+  modalAddFilmCloseButton.addEventListener("click", closeWindow);
   modalAddFilmOverlay.addEventListener("mousedown", (e) => {
     if (e.target !== modalAddFilmOverlay) {
       return;
     }
-    closingWindow();
+    closeWindow();
   });
 });
-
-// 1)Разобраться с лайками (у загруженных картинок не работают лайки)
-// 2)Сделать так, чтобы загружать можно было только картинки
-// 3)Сделать так, чтобы карточки располагались как flex-start, а не space-between
-// 4) Сделать лайки через чекбокс
-// 5) Вывести создание модалки в функции
-// 6) ИСПРАВИТЬ АДАПТИВ МОБИЛКИ

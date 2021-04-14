@@ -39,6 +39,8 @@ body {
   &__logo {
     opacity: 1;
     transition: opacity $transition-btns;
+    width: 160px;
+    height: 34px;
 
     &:hover {
       opacity: 0.7;
@@ -530,7 +532,7 @@ body {
         font-size: 14px;
         color: $clr-2;
         position: relative;
-        margin-bottom: 15px;
+        margin-bottom: 40px;
 
         &.empty-string::placeholder {
           color: red;

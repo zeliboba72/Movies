@@ -4,7 +4,7 @@ import "./add-film";
 import "../styles/normilize.css";
 import "../styles/style.scss";
 
-import "../assets/avatar2.jpg";
+import "../assets/avatar.jpg";
 import "../assets/logo.png";
 import "../assets/img1.jpg";
 import "../assets/img2.jpg";

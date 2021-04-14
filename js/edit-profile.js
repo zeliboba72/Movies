@@ -56,7 +56,7 @@ editButton.addEventListener("click", () => {
     }, 300);
   }
 
-  function closingWindow() {
+  function closeWindow() {
     editModalInputName.classList.remove("empty-string");
     editModalInputBusiness.classList.remove("empty-string");
     modalEdit.classList.add("close");
@@ -72,8 +72,8 @@ editButton.addEventListener("click", () => {
     if (e.target !== editModalOverlay) {
       return;
     }
-    closingWindow();
+    closeWindow();
   });
-  editModalCloseButton.addEventListener("click", closingWindow);
+  editModalCloseButton.addEventListener("click", closeWindow);
   editModalSubmit.addEventListener("click", submit);
 });
